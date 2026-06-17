@@ -1,12 +1,15 @@
+/**
+ * Word processing package.
+ */
 package ua.pr6;
 
 /**
- * Class for processing text: normalization, capitalization, and reversing words
+ * Class for processing text: normalization, capitalization, and reversing words.
  */
 public class TextProcessor {
 
     /**
-     * Normalizes text by removing extra symbols and extra spaces
+     * Normalizes text by removing extra symbols and extra spaces.
      * @param text input text
      * @return normalized text
      */
@@ -34,7 +37,7 @@ public class TextProcessor {
     }
 
     /**
-     * Capitalizes the first letter of each word
+     * Capitalizes the first letter of each word.
      * @param text input text
      * @return text with capitalized words
      */
@@ -47,7 +50,8 @@ public class TextProcessor {
             if (word.isEmpty()) {
                 continue;
             }
-            capitalized.append(word.substring(0, 1).toUpperCase()).append(word.substring(1));
+            capitalized.append(word.substring(0, 1).toUpperCase())
+                    .append(word.substring(1));
             if (i != words.length - 1) {
                 capitalized.append(" ");
             }
@@ -56,7 +60,7 @@ public class TextProcessor {
     }
 
     /**
-     * Reverses the order of words in the text
+     * Reverses the order of words in the text.
      * @param text input text
      * @return text with reversed word order
      */
@@ -68,7 +72,9 @@ public class TextProcessor {
 
         for (int i = words.length - 1; i >= 0; i--) {
             String word = words[i];
-            if (word.isEmpty()) continue;
+            if (word.isEmpty()) {
+                continue;
+            }
             if (!firstWord) {
                 reversed.append(" ");
             }
