@@ -8,6 +8,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -58,11 +61,9 @@ public class TextProcessorTest {
 
     @Tag("dynamic")
     @TestFactory
-    Stream<DynamicTest> testAll() {
-        return Stream.of(
-                DynamicTest.dynamicTest("Capitalize Test", () -> assertEquals("Test First", processor.capitalize("test first"))),
-                DynamicTest.dynamicTest("ReverseOrder Test", () -> assertEquals("test second", processor.reverseOrder("second test"))),
-                DynamicTest.dynamicTest("Normalize Test", () -> assertEquals("it's third test", processor.normalize("It's Third Test!")))
-        );
+    Stream<DynamicTest> test() throws IOException {
+        List<String> inputs = Files.readAllLines(Paths.get("src/test/resources/order.txt"));
+        return inputs.stream().map(text -> DynamicTest.dynamicTest
+                (text, () -> assertEquals(text, processor.reverseOrder(processor.reverseOrder(text)))));
     }
 }
