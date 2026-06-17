@@ -11,9 +11,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -25,7 +22,7 @@ public class TextProcessorTest {
     TextProcessor processor = new TextProcessor();
 
     @Tag("no_parameter")
-    @Test()
+    @Test
     public void testCapitalize() {
         String result = processor.capitalize("I love cakes");
         String expectedResult = "I Love Cakes";
