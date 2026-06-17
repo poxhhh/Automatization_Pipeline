@@ -6,6 +6,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeTags("dynamic")
-@SelectClasses({TextProcessorTest.class})
+@SelectClasses(TextProcessorTest.class)
 public class DynamicTest {
 }

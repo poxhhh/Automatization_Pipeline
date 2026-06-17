@@ -6,6 +6,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeTags("parameter")
-@SelectClasses({TextProcessorTest.class})
+@SelectClasses(TextProcessorTest.class)
 public class ParameterTest {
 }
