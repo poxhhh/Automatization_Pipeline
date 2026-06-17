@@ -1,10 +1,8 @@
-/**
- * Word processing package.
- */
 package ua.pr6;
 
 /**
- * Class for processing text: normalization, capitalization, and reversing words.
+ * Class for processing text:
+ * normalization, capitalization, and reversing words.
  */
 public class TextProcessor {
 
